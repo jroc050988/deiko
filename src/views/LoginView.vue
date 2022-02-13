@@ -33,9 +33,9 @@
           <div class="loginBox__btnBox btnstyle--1">
             <a href="" tittle="送出" @click.prevent="submit()">送出</a>
           </div>
-          <a href="signup.php" title="註冊會員" class="loginBox__signin"
-            >您還沒有會員嗎? 立即註冊</a
-          >
+          <router-link to="/signup" title="註冊會員" class="loginBox__signin">
+            您還沒有會員嗎? 立即註冊
+          </router-link>
         </form>
       </div>
     </div>
@@ -43,6 +43,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "LoginView",
   data() {
@@ -66,7 +68,7 @@ export default {
           } else {
             alert("登入成功");
             this.$cookies.set("login", "istrue", 60 * 60 * 2);
-            window.location.href = "./index.php";
+            window.location.href = "/";
           }
         })
         .catch(function (error) {
@@ -75,6 +77,7 @@ export default {
         });
     },
     submit() {
+      console.log("submit");
       this.getData();
     },
     eye() {

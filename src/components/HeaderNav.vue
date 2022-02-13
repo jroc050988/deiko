@@ -39,11 +39,11 @@
         <a href="#" title="選擇語言">繁體中文</a>
       </div> -->
       <div class="order btnstyle">
-        <router-link to="/" :href="url" :tittle="text" v-text="text">
+        <router-link :to="url" :tittle="text" v-text="text">
           <i class="fas fa-user"></i>
         </router-link>
         <div class="btn--hover">
-          <router-link to="/" :href="url" :tittle="text" v-text="text">
+          <router-link  :to="url" :tittle="text" v-text="text">
             <i class="fas fa-user"></i>
           </router-link>
         </div>
