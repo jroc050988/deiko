@@ -1,0 +1,10 @@
+.memberBox{
+    display: flex;
+    .memberBox__content{
+        width: 80%;
+        .aisatsu{
+            font-size: 1.25rem;
+            text-align: center;
+        }
+    }
+}

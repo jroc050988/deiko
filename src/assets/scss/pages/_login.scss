@@ -1,0 +1,65 @@
+//登入
+.loginBox {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+    border-radius: 10px;
+    .loginBox__btnBox {
+        margin-top: 3rem;
+        text-align: center;
+    }
+    .loginBox__forget {
+        margin-top: 0.25rem;
+        display: block;
+    }
+    .loginBox__signin {
+        text-align: center;
+        display: block;
+        margin-top: 0.5rem;
+        color: $gray;
+        @include transition(.3s);
+        &:hover{
+            color: #333;
+        }
+    }
+}
+
+.loginBox__input {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    input {
+        padding: 10px 30px 10px 10px;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+    .eyeicon  {
+        position: absolute;
+        right: 7px;
+        top: 13px;
+        font-size: 1.25rem;
+        cursor: pointer;
+        color: $gray;
+    }
+}
+//註冊
+.passwordRule__list{
+    padding: 0;
+    list-style: none; 
+}
+.passwordRule{
+    color: #da7f7f;
+    &.green{
+        color: #31a24c;
+    }
+}
+.passwordTip{
+    font-size: .9rem;
+    color: $gray;
+}

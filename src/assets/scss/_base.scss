@@ -1,0 +1,100 @@
+/*初始化設定*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    color: #333;
+    background: $main_color;
+    padding: 20px;
+    font-family: "Noto Sans TC", Arial, Helvetica, sans-serif;
+}
+a {
+    text-decoration: unset;
+    color: #333;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.warp {
+    background: #fff;
+    border-radius: 50px;
+    min-height: 100vh;
+}
+
+/*按鈕樣式*/
+.btnstyle {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    white-space: nowrap;
+    a {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        position: relative;
+        border-radius: 50px;
+        color: $black;
+        letter-spacing: 3px;
+        font-size: 1.1rem;
+        border: 2px solid $black;
+        @include transition(0.2s);
+    }
+    .btn--hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        width: 0;
+        overflow: hidden;
+        @include transition(0.3s);
+        a {
+            background: #f5c3c3;
+            color: #d96363;
+            border: 2px solid #d96363;
+        }
+    }
+    i {
+        margin: 0.25rem;
+    }
+    &:hover {
+        .btn--hover {
+            width: 100%;
+        }
+    }
+}
+.btnstyle--1{
+    a{
+        display: inline-block;
+        padding: 0.5rem 3rem;
+        position: relative;
+        border-radius: .5rem;
+        color: #fff;
+        letter-spacing: 3px;
+        font-size: 1.1rem;
+        background: #d97f7f;
+        @include transition(0.2s);
+        &:hover{
+            background: lighten(#d97f7f, 10%);
+        }
+
+    }
+}
+/*區域樣式*/
+.pagesZone{
+    padding: 5rem;
+    min-height: calc(100vh - 450px);
+    max-width: 1350px;
+    margin: 0 auto;
+}
+/*標題樣式*/
+.mainTitle {
+    font-size: 2rem;
+    font-weight: inherit;
+    letter-spacing: 3px;
+    color: $main_color;
+    text-align: center;
+    margin-bottom: 2rem;
+}

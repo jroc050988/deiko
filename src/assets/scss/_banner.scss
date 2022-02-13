@@ -1,0 +1,91 @@
+.ix__banner {
+    margin: 3rem auto;
+    border-radius: 1rem;
+    max-width: 80%;
+    border-radius: 1rem;
+    overflow: hidden;
+    .item {
+        position: relative;
+        .slogan {
+            position: absolute;
+            bottom: 35%;
+            left: 10%;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 10px #000;
+            letter-spacing: 3px;
+            @include transition(1s);
+            .title {
+                font-size: 4rem;
+                text-align: left;
+                @include transition(0.5s);
+                transition-delay: 1s;
+                position: relative;
+                &::before {
+                    content: "";
+                }
+            }
+            .subTitle {
+                font-size: 2rem;
+                @include transition(0.5s);
+                transition-delay: 1s;
+            }
+        }
+        .item__background {
+            height: calc(100vh - 235px);
+            background-size: 100%;
+            opacity: 0.5;
+            @include transition(1s);
+            &--1 {
+                background: url(assets/images/banner/ix-banner01.jpg) center/cover;
+            }
+            &--2 {
+                background: url(assets/images/banner/ix-banner02.jpg) center/cover;
+            }
+        }
+    }
+    .slick-active {
+        .item__background {
+            @include animate(ix-banner, 10s);
+            opacity: 1;
+        }
+        .slogan {
+            bottom: 25%;
+            .title {
+                transform: translateX(-15px);
+            }
+            .subTitle {
+                transform: translateX(15px);
+            }
+        }
+    }
+    .slick-dots {
+        bottom: 134px;
+        text-align: left;
+        left: calc(10% + 15px);
+        max-width: 650px;
+        li {
+            height: inherit;
+            width: 45px;
+            padding: 5px 0;
+            button {
+                height: inherit;
+                &::before {
+                    content: "";
+                    width: 100%;
+                    background: #fff;
+                    height: 6px;
+                    border-radius: 10px;
+                    opacity: 0.5;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+            &.slick-active {
+                button::before {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,49 @@
+.footerZone {
+    text-align: center;
+    padding: 150px 5rem 1rem;
+    border-top: 1px solid $sub_color;
+    .footerBox {
+        max-width: 1500px;
+        margin: 0 auto;
+        position: relative;
+    }
+    .footer__info {
+        position: absolute;
+        display: flex;
+        background: #fff;
+        width: 80%;
+        right: 0;
+        top: 0;
+        text-align: center;
+        border-radius: 0 0 0 50px;
+        .footer__infoItem {
+            width: 33%;
+            padding: 2rem;
+            .title {
+                font-size: 1.5rem;
+                letter-spacing: 3px;
+            }
+            .btnstyle{
+                margin-top: 1rem;
+            }
+            .footer__telLink{
+                margin-top: 0.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #d97f7f;
+    .footer__telLink--color{
+        color: $main_color;
+    }
+            }
+        }
+        
+    }
+    .footer__map {
+        border-radius: 10px;
+        overflow: hidden;
+        iframe {
+            height: 600px;
+        }
+    }
+}
+
