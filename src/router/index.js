@@ -41,6 +41,22 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/MemberView.vue')
+  },
+  {
+    path: '/member_pofile',
+    name: 'member_pofile',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Member_pofileView.vue')
+  },
+  {
+    path: '/member_pwdEdit',
+    name: 'member_pwdEdit',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Member_pwdEditView.vue')
   }
 ]
 

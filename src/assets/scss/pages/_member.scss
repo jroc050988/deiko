@@ -1,10 +1,39 @@
-.memberBox{
+.memberBox {
     display: flex;
-    .memberBox__content{
+    .memberBox__content {
         width: 80%;
-        .aisatsu{
+        .aisatsu {
             font-size: 1.25rem;
             text-align: center;
         }
+    }
+}
+.memberBox__content {
+    .mainText{text-align: center;}
+}
+.memberBox__inputBox {
+    padding: 2rem;
+    max-width: 80%;
+    margin: 0 auto;
+    .memberBox__input {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        label {
+            font-size: 1.1rem;
+            margin-bottom: .25rem;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+        input {
+            padding: 10px 30px 10px 10px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+    }
+    .btnBox{
+        text-align: center;
     }
 }

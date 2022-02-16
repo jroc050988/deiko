@@ -30,7 +30,7 @@
           <a href="" title="忘記密碼" class="loginBox__forget"
             >忘記密碼 <i class="fas fa-question"></i
           ></a>
-          <div class="loginBox__btnBox btnstyle--1">
+          <div class="btnBox btnstyle--1">
             <a href="" tittle="送出" @click.prevent="submit()">送出</a>
           </div>
           <router-link to="/signup" title="註冊會員" class="loginBox__signin">
@@ -63,11 +63,13 @@ export default {
           `http://localhost:3000/users?id=${this.yourEmail}&password=${this.yourPassword}`
         )
         .then((res) => {
+          console.log(res.data[0].id);
           if (res.data.length == 0) {
             alert("帳號/密碼輸入錯誤");
           } else {
             alert("登入成功");
             this.$cookies.set("login", "istrue", 60 * 60 * 2);
+            this.$cookies.set("loginId", res.data[0].id, 60 * 60 * 2);
             window.location.href = "/";
           }
         })

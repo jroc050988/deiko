@@ -108,6 +108,9 @@ export default {
       isRule04_true: false,
       isRule05_true: false,
       usersData: null,
+      isOk01: false,
+      isOk02: false,
+      isOk03: false,
     };
   },
   mounted() {},
@@ -142,16 +145,23 @@ export default {
         });
     },
     validation_email() {
+      this.isRule01_true = false;
+      this.isOk01 = false;
       console.log(/[@]/.test(this.yourEmail));
       if (this.usersData.length == 0 && /[@]/.test(this.yourEmail) == true) {
         console.log("可使用此電子信箱");
         this.isRule01_true = true;
+        this.isOk01 = true;
       } else {
         console.log("此電子信箱已註冊");
         this.isRule01_true = false;
       }
     },
     validation_password() {
+      this.isOk02 = false;
+      this.isRule02_true = false;
+      this.isRule03_true = false;
+      this.isRule04_true = false;
       var pwdLen = this.yourPassword01.length;
       // console.log(pwdLen);
       if (pwdLen < 6 || pwdLen > 12) {
@@ -176,20 +186,29 @@ export default {
           } else {
             this.isRule04_true = true;
             console.log("已包含大寫字母");
+            this.isOk02 = true;
           }
         }
       }
     },
     validation_password_confirm() {
+      this.isOk03 = false;
+      this.isRule05_true = false;
       if (this.yourPassword01 !== this.yourPassword02) {
         console.log("確認密碼錯誤");
       } else {
         console.log("確認密碼正確");
         this.isRule05_true = true;
+        this.isOk03 = true;
       }
     },
     submit() {
-      this.postData();
+      if (this.isOk01 == true && this.isOk02 == true && this.isOk03 == true) {
+        this.postData();
+      } else {
+        alert("輸入內容有誤，請重新確認!");
+        return;
+      }
     },
     eye01() {
       if (this.isView01 == "password") {

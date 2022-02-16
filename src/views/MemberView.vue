@@ -5,7 +5,7 @@
       <div class="memberBox">
         <Sidebar />
         <div class="memberBox__content">
-          <p class="aisatsu">Hi! 狄哥，歡迎回來!</p>
+          <p class="aisatsu">Hi! {{memberName}}，歡迎回來!</p>
           <div class="memberBox__inputBox">
             <div></div>
           </div>
@@ -17,21 +17,34 @@
 
 <script>
 import Sidebar from "@/components/Sidebar.vue";
+import axios from "axios";
 export default {
   name: "MemberView",
   components: {
     Sidebar,
   },
   data() {
-    return {};
+    return {
+      memberName:"",
+      loginId:"",
+    };
   },
-  mounted() {},
+  mounted() {
+    this.loginId = this.$cookies.get("loginId");
+    this.getData();
+  },
   methods: {
-    logout() {
-      alert("帳號已登出");
-      this.$cookies.remove("login");
-      window.location.href = "./index.php";
-    },
+    getData() {
+      axios
+        .get(`http://localhost:3000/users/${this.loginId}`)
+        .then((res) => {
+          this.memberName = res.data.name;
+        })
+        .catch(function (error) {
+          // 请求失败处理
+          console.log(error);
+        });
+    }
   },
 };
 </script>
